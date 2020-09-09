@@ -7,7 +7,7 @@ import sys, subprocess, os, time
 # Version:       0.1
 # Author:        zah20
 #
-# Last Modified: Wed Sep 09, 2020 (05:12 PM)
+# Last Modified: Wed Sep 09, 2020 (07:30 PM)
 #
 # For crc32 hash checks, please install crctk 
 # Source: https://github.com/2ion/crctk
@@ -40,6 +40,7 @@ data = []
 ##################################################
 #           Error Checking Functions               
 ##################################################
+
 def check_errors():
     # Performs checks to ensure we have everything we need
     # Executes: check_platform(), check_openssl(), check_files()
@@ -56,7 +57,6 @@ def check_errors():
     
 def check_platform():
     # Checks whether we're on Linux
-    # Returns: Boolean indicating if system is linux
 
     if (sys.platform == 'linux' or sys.platform == 'linux2'):
         pass
@@ -67,7 +67,6 @@ def check_platform():
 
 def check_openssl():
     # Checks if openssl is available
-    # Returns: Boolean indicating availability of openssl
 
     global openssl_path
 
@@ -77,7 +76,6 @@ def check_openssl():
 
 def check_crctk():
     # Checks if crctk is installed
-    # Returns: Boolean indicating availability of crctk
 
     global crctk_path, skip_crc32
 
@@ -136,7 +134,6 @@ def check_hashes():
     
     global file_list, openssl_hash_types, skip_crc32, data
     
-
     for i in openssl_hash_types:
         print("Hash type: %s" % (i.upper().replace("-", "")))
         _hash = i.upper().replace('-',"")
@@ -156,7 +153,6 @@ def check_hashes():
         time_per_GB = (_total_time/12.0)
             
         print("Time / GB: %.2f s\n" % time_per_GB)
-        
         print("#"*50)
         
     # Checking for crc32 hash
