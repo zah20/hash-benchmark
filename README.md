@@ -1,7 +1,7 @@
 # Hash Benchmarking Script
 Performance benchmark of common hashing functions using OpenSSL on Linux.
 
-![alt tag](resource/img/performance.png)
+![alt tag](resources/img/performance.png)
 
 ## Features
 - Code is simple, well documented & written from scratch in Python
